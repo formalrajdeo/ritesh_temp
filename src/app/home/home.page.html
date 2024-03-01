@@ -1,0 +1,81 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start"><ion-menu-button></ion-menu-button></ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+<div *ngIf="!data">
+<ion-skeleton-text [animated]="true" class="sek1"></ion-skeleton-text>
+
+<div class="ion-padding">
+  
+<ion-skeleton-text [animated]="true" class="sek2" *ngFor="let fake of fakeData"></ion-skeleton-text>
+
+</div>
+
+</div>
+
+<div *ngIf="data">
+<div class="top">
+
+<h1>{{ data.student.first_name }} {{ data.student.last_name }}</h1>
+
+<p style="font-size: 14px;">{{ data.course.name }} - {{ data.scourse.batch }} - Joining Date : {{ data.scourse.joining_date | date:'dd-MMM-YYYY' }}</p>
+
+</div>
+
+<div class="white">
+
+<div class="ion-padding">
+<br>  
+<img src="assets/l.png" style="width: 80%;margin-left: 10%;"><br>
+<h1>Welcome to Operating Media </h1><br>
+
+<ion-item detail lines="none" mode="md" routerLink="/course">
+<ion-label>Course Details</ion-label>
+<ion-icon name="school-outline" slot="start"></ion-icon>
+</ion-item>
+
+<ion-item detail lines="none" mode="md" routerLink="/assignment/0">
+<ion-label>Study Material</ion-label>
+<ion-icon name="book-outline" slot="start"></ion-icon>
+</ion-item>
+
+<ion-item detail lines="none" mode="md" routerLink="/assignment/1">
+  <ion-label>Assignments</ion-label>
+  <ion-icon name="reader-outline" slot="start"></ion-icon>
+  </ion-item>
+
+<ion-item detail lines="none" mode="md" routerLink="/att">
+<ion-label>Attendance</ion-label>
+<ion-icon name="create-outline" slot="start"></ion-icon>
+</ion-item>
+
+<ion-item detail lines="none" mode="md" routerLink="/fee">
+<ion-label>Fee Details</ion-label>
+<ion-icon name="cash-outline" slot="start"></ion-icon>
+</ion-item>
+
+<ion-item detail lines="none" mode="md" routerLink="/news">
+<ion-label>Latest Update</ion-label>
+<ion-icon name="volume-high-outline" slot="start"></ion-icon>
+</ion-item>
+
+<br><p>Follow us on social media</p>
+
+<ion-row style="text-align: center;margin-top: 30px;">
+<ion-col size="3"><a href="https://instagram.com/operatingmedia?igshid=MzRlODBiNWFlZA==" target="_blank"><ion-icon name="logo-instagram" color="danger" style="font-size: 30px;"></ion-icon></a></ion-col>
+<ion-col size="3"><a href="https://www.facebook.com/OperatingMedia?mibextid=eBUYbo" target="_blank"><ion-icon name="logo-facebook" color="tertiary" style="font-size: 30px;"></ion-icon></a></ion-col>
+<ion-col size="3"><a href="https://www.youtube.com/operatingmedia" target="_blank"><ion-icon name="logo-youtube" color="danger" style="font-size: 30px;"></ion-icon></a></ion-col>
+<ion-col size="3"><a href="https://x.com/operatingmedia?s=11&t=pWCq57vrWmZjx9tQt4noVA" target="_blank"><ion-icon name="logo-twitter" color="secondary" style="font-size: 30px;"></ion-icon></a></ion-col>
+</ion-row>
+
+<br><p>About Us</p>
+<small [innerHTML]="data.data.description" style="color: gray;"></small>
+
+</div>
+</div>
+</div>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title>Latest Update</ion-title>
+    <ion-buttons slot="start"><ion-back-button></ion-back-button></ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+<div *ngIf="!data">
+<div class="ion-padding">
+
+<ion-skeleton-text [animated]="true" class="sek2" *ngFor="let fake of fakeData"></ion-skeleton-text>
+
+</div>
+</div>
+
+<div *ngIf="data">
+
+<ion-card mode="ios" *ngFor="let news of data">
+
+<img src="{{ news.img }}" *ngIf="news.img">
+
+<ion-card-header>
+<ion-card-title>{{ news.title }}</ion-card-title>
+<ion-card-subtitle>{{ news.date_added }}</ion-card-subtitle>
+</ion-card-header>
+
+<ion-card-content>
+<div [innerHTML]="news.description"></div> 
+</ion-card-content>
+
+</ion-card>
+
+</div>
+
+</ion-content>

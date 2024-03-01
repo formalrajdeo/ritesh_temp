@@ -1,0 +1,31 @@
+ion-label span
+{
+    color:gray;
+    display: block;
+    margin-top: 10px;
+}
+
+ion-item
+{
+    margin-top: 20px;
+    --min-height:60px;
+    border-radius: 5px;
+
+}
+
+.sek2
+{
+    height: 120px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+ion-content
+{
+    --background:var(--ion-color-light);
+}
+
+ion-card-title
+{
+    font-size: 18px;
+}

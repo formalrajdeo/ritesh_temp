@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'ritesh',
+  appId: 'com.OperatingMediaDigitalMarketingTrainingNew',
+  appName: 'Operating Media',
   webDir: 'www',
   server: {
     androidScheme: 'https'

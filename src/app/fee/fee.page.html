@@ -1,0 +1,40 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title>Fee Details</ion-title>
+    <ion-buttons slot="start"><ion-back-button></ion-back-button></ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+<div *ngIf="!data">
+<div class="ion-padding">
+
+<ion-skeleton-text [animated]="true" class="sek2" *ngFor="let fake of fakeData"></ion-skeleton-text>
+
+</div>
+</div>
+
+<div *ngIf="data" class="ion-padding">
+
+<ion-item lines="none">
+<ion-label>Total Payable Fee <span>Rs.{{ data.payable }}</span></ion-label>
+</ion-item>
+
+<ion-item lines="none">
+<ion-label>Total Paid <span>Rs.{{ data.total }}</span></ion-label>
+</ion-item>
+
+<ion-item lines="none">
+<ion-label>Balance <span>Rs.{{ data.balance }}</span></ion-label>
+</ion-item>
+
+<br><h3>Deposited Fees</h3>
+
+<ion-item *ngFor="let fee of data.data" lines="none">
+<ion-label>Rs.{{ fee.amount }} <span>{{ fee.date }}</span> <small>{{ fee.mode }}  <a style="float:right;text-decoration: none;" target="_blank" href="{{ fee.url }}">View Receipt</a> </small> </ion-label>
+</ion-item>
+
+</div>
+
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title *ngIf="title">{{ title }}</ion-title>
+    <ion-buttons slot="start"><ion-back-button></ion-back-button></ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+<div *ngIf="!data">
+<div class="ion-padding">
+
+<ion-skeleton-text [animated]="true" class="sek2" *ngFor="let fake of fakeData"></ion-skeleton-text>
+
+</div>
+</div>
+
+<div *ngIf="data">
+
+<ion-card mode="ios" *ngFor="let a of data">
+
+<ion-card-header>
+<ion-card-title>{{ a.title }}</ion-card-title>
+<ion-card-subtitle>{{ a.date_added }}</ion-card-subtitle>
+</ion-card-header>
+
+<ion-card-content>
+<div [innerHTML]="a.description"></div> 
+
+<br>
+<ion-button href="{{ a.file }}" target="_blank" *ngIf="a.file">View File</ion-button>&nbsp;&nbsp;&nbsp;&nbsp;<ion-button href="{{ a.video }}" target="_blank" *ngIf="a.video" color="dark">Video</ion-button>
+
+</ion-card-content>
+
+</ion-card>
+
+</div>
+
+</ion-content>

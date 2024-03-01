@@ -1,0 +1,23 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scroll-y="false">
+
+<img src="assets/l.png" style="width: 80%;margin-left: 10%;margin-top: 20%;margin-bottom: 10%;">
+
+<div class="login">
+<div class="ion-padding">
+<h1 style="font-weight: 800;">Login to Continue</h1>
+<p style="color:gray;font-size: 14px;margin-top: -2px;">Login ID was provided to you when you admitted</p>
+<br>
+<form #form="ngForm" (ngSubmit)="login(form.value)">
+<ion-input label="Enter Your Login ID" label-placement="floating" fill="outline" name="loginID" ngModel [disabled]="hasClick"></ion-input>
+<br>
+<ion-button mode="ios" expand="block" color="dark" type="submit" *ngIf="!hasClick">Login</ion-button>
+<ion-button mode="ios" expand="block" color="dark" type="button" *ngIf="hasClick"><ion-spinner name="crescent"></ion-spinner></ion-button>
+</form>
+</div>
+</div>
+</ion-content>
